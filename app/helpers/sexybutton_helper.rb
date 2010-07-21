@@ -1,14 +1,14 @@
 module SexybuttonHelper
 
   def include_sexybuttons
-    tag(:link, :type => 'text/css', :media => 'screen', :ref => 'stylesheet', :href => '/components/SexyButtons/sexybuttons.css')
+    tag(:link, :type => 'text/css', :media => 'screen', :rel => 'stylesheet', :href => '/components/SexyButtons/sexybuttons.css')
   end
 
   def sexybutton(text, url = nil)
     tag_name = 'button'
 
     btn = SexyButton.new
-    yield btn
+    yield btn if block_given?
 
     html_class = "sexybutton sexysimple sexy#{btn.color}" 
     if btn.style

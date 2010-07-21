@@ -1,3 +1,7 @@
+v0.0.3 (Jul 21, 2010)
+
+* fixed stylesheet tag misspelling.
+
 v0.0.2 (Jul 21, 2010)
 
 * added a helper method to include the stylesheet.
