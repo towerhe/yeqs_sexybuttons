@@ -18,5 +18,5 @@ Gem::Specification.new do |s|
 
   s.add_bundler_dependencies
 
-  s.files =  Dir.glob("{app,lib,public}/**/*") + %w(MIT-LICENSE README.rdoc)
+  s.files =  Dir.glob("{app,lib,public}/**/*") + %w(Gemfile MIT-LICENSE README.rdoc Rakefile VERSION yeqs_sexybuttons.gemspec)
 end

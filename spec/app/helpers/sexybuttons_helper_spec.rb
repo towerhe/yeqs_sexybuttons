@@ -5,25 +5,31 @@ module Yeqs
     describe SexybuttonHelper do
       before(:each) do
         @obj = Object.new
+        @obj.extend(ActionView::Helpers::TagHelper)
         @obj.extend(SexybuttonHelper)
+      end
+
+      it "should generate a link tag including the sexybuttons' stylesheet" do
+        html = @obj.include_sexybuttons
+        html.should == '<link href="/components/SexyButtons/sexybuttons.css" media="screen" ref="stylesheet" type="text/css" />'
       end
       
       it "should generate a simple sexybutton" do
-        html = @obj.sexybutton do |b|
+        html = @obj.sexybutton('Simple Button') do |b|
+          b.id = 'sbtn-id'
+          b.style = 'custom'
           b.type = 'submit'
           b.color = 'orange'
           b.image = 'ok'
-          b.text = 'Simple Button'
+          b.html_options = { :ref => 'sbtn' }
         end
 
-        html.should == '<button class="sexybutton sexysimple sexyorange" type="submit"><span class="ok">Simple Button</span></button>'
+        html.should == '<button class="sexybutton sexysimple sexyorange custom" id="sbtn-id" ref="sbtn" type="submit"><span class="ok">Simple Button</span></button>'
       end
 
       it "should generate a link" do
-        html = @obj.sexybutton do |b|
+        html = @obj.sexybutton('Google', 'http://www.google.com') do |b|
           b.color = 'orange'
-          b.text = 'Google'
-          b.url = 'http://www.google.com'
         end
 
         html.should == '<a class="sexybutton sexysimple sexyorange" href="http://www.google.com">Google</a>'

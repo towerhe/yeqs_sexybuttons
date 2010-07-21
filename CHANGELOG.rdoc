@@ -1,0 +1,4 @@
+v0.0.2 (Jul 21, 2010)
+
+* added a helper method to include the stylesheet.
+* redefined the API of sexybutton.

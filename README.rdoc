@@ -20,37 +20,34 @@ Generate the assets of yeqs_sexybuttons.
 
 Yeqs Sexybuttons provide a view helper to generate a sexybutton. First of all, your need to add a sexybuttons css to your layout.
 
-  <link type="text/css" media="screen" href="/components/SexyButtons/sexybuttons.css" />
+  <%= include_sexybuttons %>
+
+this will produce html like:
+
+  <link type="text/css" media="screen" ref="stylesheet" href="/components/SexyButtons/sexybuttons.css" />
 
 Generate a linkage.
 
-  <%= 
-      sexybutton do |b|
-        b.style = 'simple'                # default is simple
-        b.color = 'orange'                # default is black
-        b.image = 'google'                # optional
-        b.text = 'Google'
-        b.url = 'http://www.google.com'
-      end
-  %>
+  <%= sexybutton('Google', 'http://www.google.com') do |b|
+    b.color = 'orange'                # default is black
+    b.image = 'google'                # optional
+  end %>
 
-This will generate a link as follows:
+this will produce html like:
 
   <a class="sexybutton sexysimple sexyorange" href="http://www.google.com"><span class="google">Google</span></a>
 
 Generate a submit button.
 
-  <%= 
-      sexybutton do |b|
-        b.type = 'submit'                 # optional
-        b.style = 'simple'                # default is simple
-        b.color = 'orange'                # default is black
-        b.image = 'save'                  # optional
-        b.text = 'Save'
-      end
-  %>
+   <%= sexybutton('Simple Button') do |b|
+      b.id = 'sbtn-id'
+      b.style = 'custom'
+      b.type = 'submit'
+      b.color = 'orange'
+      b.image = 'ok'
+      b.html_options = { :ref => 'sbtn' }
+    end %>
 
-This will generate a button as follows:
+this will produce html like:
 
-  <button class="sexybutton sexysimple sexyorange" type="submit"><span class="save">Save</span></button>
-
+  <button class="sexybutton sexysimple sexyorange custom" id="sbtn-id" ref="sbtn" type="submit"><span class="ok">Simple Button</span></button>
