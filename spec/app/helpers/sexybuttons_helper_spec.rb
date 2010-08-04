@@ -11,7 +11,7 @@ module Yeqs
 
       it "should generate a link tag including the sexybuttons' stylesheet" do
         html = @obj.include_sexybuttons
-        html.should == '<link href="/components/SexyButtons/sexybuttons.css" media="screen" ref="stylesheet" type="text/css" />'
+        html.should == '<link href="/components/SexyButtons/sexybuttons.css" media="screen" rel="stylesheet" type="text/css" />'
       end
       
       it "should generate a simple sexybutton" do
@@ -21,10 +21,10 @@ module Yeqs
           b.type = 'submit'
           b.color = 'orange'
           b.image = 'ok'
-          b.html_options = { :ref => 'sbtn' }
+          b.html_options = { :rel => 'sbtn' }
         end
 
-        html.should == '<button class="sexybutton sexysimple sexyorange custom" id="sbtn-id" ref="sbtn" type="submit"><span class="ok">Simple Button</span></button>'
+        html.should == '<button class="sexybutton sexysimple sexyorange custom" id="sbtn-id" rel="sbtn" type="submit"><span class="ok">Simple Button</span></button>'
       end
 
       it "should generate a link" do

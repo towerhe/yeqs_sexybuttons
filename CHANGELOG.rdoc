@@ -1,3 +1,8 @@
+v0.0.4 (Aug 04, 2010)
+
+* modify the Gemfile.
+* use the new initializer method in rails engine to load the helpers.
+
 v0.0.3 (Jul 21, 2010)
 
 * fixed stylesheet tag misspelling.
