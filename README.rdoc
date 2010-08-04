@@ -24,7 +24,7 @@ Yeqs Sexybuttons provide a view helper to generate a sexybutton. First of all, y
 
 this will produce html like:
 
-  <link type="text/css" media="screen" ref="stylesheet" href="/components/SexyButtons/sexybuttons.css" />
+  <link type="text/css" media="screen" rel="stylesheet" href="/components/SexyButtons/sexybuttons.css" />
 
 Generate a linkage.
 
@@ -45,9 +45,9 @@ Generate a submit button.
       b.type = 'submit'
       b.color = 'orange'
       b.image = 'ok'
-      b.html_options = { :ref => 'sbtn' }
+      b.html_options = { :rel => 'sbtn' }
     end %>
 
 this will produce html like:
 
-  <button class="sexybutton sexysimple sexyorange custom" id="sbtn-id" ref="sbtn" type="submit"><span class="ok">Simple Button</span></button>
+  <button class="sexybutton sexysimple sexyorange custom" id="sbtn-id" rel="sbtn" type="submit"><span class="ok">Simple Button</span></button>
