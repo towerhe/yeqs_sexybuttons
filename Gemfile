@@ -1,9 +1,9 @@
 source "http://rubygems.org"
 
 
-gem "rails", "3.0.0.rc"
+gem "rails", "3.0.0.rc2"
 
-group :develpment do
+group :development do
   if RUBY_VERSION < '1.9'
     gem "ruby-debug", ">= 0.10.3"
   end
