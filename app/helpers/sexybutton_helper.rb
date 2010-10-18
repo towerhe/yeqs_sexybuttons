@@ -4,12 +4,13 @@ module SexybuttonHelper
     tag(:link, :type => 'text/css', :media => 'screen', :rel => 'stylesheet', :href => '/components/SexyButtons/sexybuttons.css')
   end
 
-  def sexybutton(text, url = nil)
+  def sexybutton(text, url = nil, image = nil)
     tag_name = 'button'
 
     btn = SexyButton.new
     yield btn if block_given?
 
+    image ||= btn.image
     html_class = "sexybutton sexysimple sexy#{btn.color}" 
     if btn.style
       html_class << " #{btn.style}"
@@ -22,7 +23,7 @@ module SexybuttonHelper
       tag_name = 'a'
     end
 
-    content = btn.image ? content_tag(:span, text, :class => btn.image) : text
+    content = image.nil? ? text : content_tag(:span, text, :class => image)
     content_tag(tag_name, content, html_options)
   end
 

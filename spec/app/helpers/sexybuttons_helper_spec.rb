@@ -34,6 +34,11 @@ module Yeqs
 
         html.should == '<a class="sexybutton sexysimple sexyorange" href="http://www.google.com">Google</a>'
       end
+
+      it "should generate a link with a image" do
+        html = @obj.sexybutton('Google', 'http://www.google.com', 'google')
+        html.should == '<a class="sexybutton sexysimple sexyblack" href="http://www.google.com"><span class="google">Google</span></a>'
+      end
     end
   end
 end
